@@ -9,8 +9,8 @@ Route::get('/', function () {
     return view('home');
 });
 
-Route::get('/hello/{your_name}', function ($your_name) {
-    return 'Hello, ' . $your_name;
+Route::get('/hello/{name}', function ($name) {
+    return 'Hello, ' . $name;
 });
 
 Route::get('/about', [AboutController::class, 'index']);
