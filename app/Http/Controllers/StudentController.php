@@ -21,27 +21,20 @@ class StudentController extends Controller
 
     public function store(Request $request)
     {
-        $request->validate([
-        'roll_no' => 'required',
-        'name' => 'required',
-        'email' => 'required|email',
-        'department' => 'required',
-        'semester' => 'required|integer',
-        'cgpa' => 'required|numeric',
+        
+    $student = Student::create([
+        'roll_no' => $request->roll_no,
+        'name' => $request->name,
+        'email' => $request->email,
+        'department' => $request->department,
+        'semester' => $request->semester,
+        'cgpa' => $request->cgpa,
     ]);
 
-        $student = Student::create($request->only([
-        'roll_no',
-        'name',
-        'email',
-        'department',
-        'semester',
-        'cgpa'
-    ]));
-
-        return redirect()
+    return redirect()
         ->route('students.show', $student)
-        ->with('status', 'Student added successfully!');
+        ->with('status', 'Student saved successfully!');
+
     }
     public function show(Student $student)
     {
