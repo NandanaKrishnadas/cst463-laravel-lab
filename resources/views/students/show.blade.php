@@ -1,6 +1,11 @@
 @extends('layouts.app')
 
 @section('content')
+@if (session('status'))
+    <p style="color: green;">
+        {{ session('status') }}
+    </p>
+@endif
 
 <h2>Student Details</h2>
 
