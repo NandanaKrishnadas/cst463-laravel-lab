@@ -20,6 +20,7 @@ class DatabaseSeeder extends Seeder
             ['CS23-04', 'Arjun Das',      6.80],
             ['CS23-05', 'Meera Nair',     8.05],
             ['CS23-06', 'Joel Thomas',    7.40],
+            ['CS23-46', 'Nandana Krishnadas', 9.57]
         ];
 
         foreach ($rows as [$roll, $name, $cgpa]) {
